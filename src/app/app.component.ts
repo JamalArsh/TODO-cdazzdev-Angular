@@ -13,6 +13,7 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 
 import { NzMessageService } from 'ng-zorro-antd/message';
+import { DataService } from './services/data.service';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -68,7 +69,8 @@ export class AppComponent {
 
   constructor(
     private modalService: NzModalService,
-    private nzMessageService: NzMessageService
+    private nzMessageService: NzMessageService,
+    private dataService: DataService
   ) {}
 
   addNewTask() {
@@ -97,7 +99,7 @@ export class AppComponent {
   }
 
   cancel(): void {
-    this.nzMessageService.info('click cancel');
+    this.nzMessageService.info('Delete canceled');
   }
 
   confirm(): void {
